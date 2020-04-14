@@ -13,6 +13,13 @@ let header =
         href="https://mrmurphy.dev/" target="_blank" className="text-blue-400">
         "Murphy Randle"->string
       </a>
+      " and "->string
+      <a
+        href="https://twitter.com/sgrove"
+        target="_blank"
+        className="text-blue-400">
+        "Sean Grove"->string
+      </a>
     </div>
   </div>;
 
@@ -24,13 +31,21 @@ let footer =
           "What this does"->string
         </h2>
         <ul>
-          <li> "Replaces 'class=' with 'className='"->string </li>
-          <li> "Replaces 'type=' with 'type_='"->string </li>
-          <li> "Replaces 'for=' with 'htmlFor='"->string </li>
+          <li>
+            "Fixes all reserved keywords, like 'class'=>'className='"->string
+          </li>
           <li> "Converts attributes to CamelCase"->string </li>
-          <li> "Wraps text in quotes and ->string"->string </li>
+          <li>
+            "Decodes entities in text, then wraps it in quotes and ->string"
+            ->string
+          </li>
           <li> "Converts HTML comments to Reason comments"->string </li>
           <li> "Closes self-closing attributes"->string </li>
+          <li>
+            "Converts 'style' attribute into "->string
+            <code> "ReactDOMRe.make"->string </code>
+            " calls"->string
+          </li>
         </ul>
       </div>
       <div>
@@ -38,11 +53,6 @@ let footer =
           "Made Possible By"->string
         </h2>
         <ul>
-          <li className="underline">
-            <a href="https://github.com/rehypejs/rehype" target="_blank">
-              "Unified and rehype"->string
-            </a>
-          </li>
           <li className="underline">
             <a href="https://feathericons.com/?query=copy" target="_blank">
               "Feather Icons"->string
@@ -54,20 +64,8 @@ let footer =
             </a>
           </li>
           <li className="underline">
-            <a
-              href="https://www.npmjs.com/package/lodash.camelcase"
-              target="_blank">
-              "Lodash.camelcase"->string
-            </a>
-          </li>
-          <li className="underline">
             <a href="https://tailwindui.com" target="_blank">
               "Tailwind & Tailwind UI"->string
-            </a>
-          </li>
-          <li className="underline">
-            <a href="https://regexr.com/" target="_blank">
-              "Regexr"->string
             </a>
           </li>
           <li className="underline">

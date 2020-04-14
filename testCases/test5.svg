@@ -1,0 +1,17 @@
+<svg width="690" height="977" viewBox="0 0 690 977" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M33.5 241.5C35.1667 237 100.9 192.7 350.5 51.5L635.5 220L655.5 241.5V573L647 590L350.5 760H335.5L48.5 590L33.5 573V241.5Z" fill="#FEFEFE" stroke="black"/>
+<text fill="#54615F" stroke="#FEFEFE" stroke-width="4" xml:space="preserve" style="white-space: pre" font-family="IBM Plex Mono" font-size="135.385" font-weight="300" letter-spacing="0em"><tspan x="20.2115" y="912.769">OneGraph</tspan></text>
+<mask id="path-3-inside-1" fill="white">
+<path d="M27 223.5L345 40L663 223.5V590.5L345 774L27 590.5L27 223.5Z"/>
+</mask>
+<path d="M27 223.5L345 40L663 223.5V590.5L345 774L27 590.5L27 223.5Z" stroke="#54615F" stroke-width="40" mask="url(#path-3-inside-1)"/>
+<mask id="path-4-inside-2" fill="white">
+<path d="M80.832 254.677L345 102.353L609.167 254.677V559.323L345 711.647L80.832 559.323L80.832 254.677Z"/>
+</mask>
+<path d="M80.832 254.677L345 102.353L609.167 254.677V559.323L345 711.647L80.832 559.323L80.832 254.677Z" stroke="#3CC7B6" stroke-width="40" mask="url(#path-4-inside-2)"/>
+<mask id="path-5-inside-3" fill="white">
+<path d="M137 286L345 165L553 286V528L345 649L137 528L137 286Z"/>
+</mask>
+<path d="M137 286L345 165L553 286V528L345 649L137 528L137 286Z" stroke="#B0E8E1" stroke-width="40" mask="url(#path-5-inside-3)"/>
+<path d="M346 285.629L239.89 346.814V469.185L346 530.37L452.11 469.185V440.137H346L346 415L346 392.947H495.173V494.015L346 580.031L196.827 494.015V321.984L346 235.968L495.173 321.984L452.11 346.814L346 285.629Z" fill="#54615F"/>
+</svg>

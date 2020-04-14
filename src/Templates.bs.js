@@ -15,7 +15,11 @@ var header = React.createElement("div", {
               className: "text-blue-400",
               href: "https://mrmurphy.dev/",
               target: "_blank"
-            }, "Murphy Randle")));
+            }, "Murphy Randle"), " and ", React.createElement("a", {
+              className: "text-blue-400",
+              href: "https://twitter.com/sgrove",
+              target: "_blank"
+            }, "Sean Grove")));
 
 var footer = React.createElement("div", {
       className: "bg-gray-400 text-gray-600 p-6 py-6 text-xs"
@@ -23,14 +27,9 @@ var footer = React.createElement("div", {
           className: "grid grid-cols-2 gap-4"
         }, React.createElement("div", undefined, React.createElement("h2", {
                   className: "font-semibold text-lg mb-2 text-gray-700"
-                }, "What this does"), React.createElement("ul", undefined, React.createElement("li", undefined, "Replaces 'class=' with 'className='"), React.createElement("li", undefined, "Replaces 'type=' with 'type_='"), React.createElement("li", undefined, "Replaces 'for=' with 'htmlFor='"), React.createElement("li", undefined, "Converts attributes to CamelCase"), React.createElement("li", undefined, "Wraps text in quotes and ->string"), React.createElement("li", undefined, "Converts HTML comments to Reason comments"), React.createElement("li", undefined, "Closes self-closing attributes"))), React.createElement("div", undefined, React.createElement("h2", {
+                }, "What this does"), React.createElement("ul", undefined, React.createElement("li", undefined, "Fixes all reserved keywords, like 'class'=>'className='"), React.createElement("li", undefined, "Converts attributes to CamelCase"), React.createElement("li", undefined, "Decodes entities in text, then wraps it in quotes and ->string"), React.createElement("li", undefined, "Converts HTML comments to Reason comments"), React.createElement("li", undefined, "Closes self-closing attributes"), React.createElement("li", undefined, "Converts 'style' attribute into ", React.createElement("code", undefined, "ReactDOMRe.make"), " calls"))), React.createElement("div", undefined, React.createElement("h2", {
                   className: "font-semibold text-lg mb-2 text-gray-700"
                 }, "Made Possible By"), React.createElement("ul", undefined, React.createElement("li", {
-                      className: "underline"
-                    }, React.createElement("a", {
-                          href: "https://github.com/rehypejs/rehype",
-                          target: "_blank"
-                        }, "Unified and rehype")), React.createElement("li", {
                       className: "underline"
                     }, React.createElement("a", {
                           href: "https://feathericons.com/?query=copy",
@@ -43,19 +42,9 @@ var footer = React.createElement("div", {
                         }, "Next.js")), React.createElement("li", {
                       className: "underline"
                     }, React.createElement("a", {
-                          href: "https://www.npmjs.com/package/lodash.camelcase",
-                          target: "_blank"
-                        }, "Lodash.camelcase")), React.createElement("li", {
-                      className: "underline"
-                    }, React.createElement("a", {
                           href: "https://tailwindui.com",
                           target: "_blank"
                         }, "Tailwind & Tailwind UI")), React.createElement("li", {
-                      className: "underline"
-                    }, React.createElement("a", {
-                          href: "https://regexr.com/",
-                          target: "_blank"
-                        }, "Regexr")), React.createElement("li", {
                       className: "underline"
                     }, React.createElement("a", {
                           href: "https://netlify.com/",
