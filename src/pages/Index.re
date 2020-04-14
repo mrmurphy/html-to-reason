@@ -1,4 +1,7 @@
 open React;
+
+let defaultText = {j|<div style="font-weight: bolder">Hello there! Go on &amp; convert your html!</div>|j};
+
 type state = {
   html: string,
   jsx: string,
@@ -7,11 +10,17 @@ type state = {
 type action =
   | UpdateHTML(string);
 
-let initialState = {html: "", jsx: ""};
+let initialState = {
+  html: defaultText,
+  jsx: HtmlConverter.convert("__DEFAULT__", defaultText),
+};
 
 let reducer = (_state, action) =>
   switch (action) {
-  | UpdateHTML(str) => {html: str, jsx: str->HtmlConverter.go}
+  | UpdateHTML(str) => {
+      html: str,
+      jsx: HtmlConverter.convert("_INLINE_", str),
+    }
   };
 
 [@bs.module] external copy_text: (~id: string) => unit = "../copy_text.js";

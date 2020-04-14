@@ -1,0 +1,149 @@
+<div id="readme" class="Box md js-code-block-container Box--condensed">
+    <div class="Box-header d-flex flex-items-center flex-justify-between ">
+        <h2 class="Box-title pr-3">
+            <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"></path></svg>
+            readme.md
+        </h2>
+    </div>
+    <div class="Popover anim-scale-in js-tagsearch-popover" hidden="" data-tagsearch-url="/syntax-tree/unist-util-visit-parents/find-symbols" data-tagsearch-ref="master" data-tagsearch-path="readme.md" data-tagsearch-lang="Markdown" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_symbol&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_symbol&quot;,&quot;repository_id&quot;:54721341,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Markdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/syntax-tree/unist-util-visit-parents&quot;,&quot;user_id&quot;:35296}}" data-hydro-click-hmac="91901fa7d356bf9f7fe6fd55294b26ccf7b67ea32d4db87626a18239da39986a">
+        <div class="Popover-message Popover-message--large Popover-message--top-left TagsearchPopover mt-1 mb-4 mx-auto Box box-shadow-large">
+            <div class="TagsearchPopover-content js-tagsearch-popover-content overflow-auto" style="will-change:transform;">
+            </div>
+        </div>
+    </div>
+
+    <div class="Box-body p-5">
+        <article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-unist-util-visit-parents" class="anchor" aria-hidden="true" href="#unist-util-visit-parents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>unist-util-visit-parents</h1>
+            <p><a href="https://travis-ci.org/syntax-tree/unist-util-visit-parents" rel="nofollow"><img src="https://camo.githubusercontent.com/60f5db75bc280fafaf5cde0656fd8e9196204de3/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f73796e7461782d747265652f756e6973742d7574696c2d76697369742d706172656e74732e737667" alt="Build" data-canonical-src="https://img.shields.io/travis/syntax-tree/unist-util-visit-parents.svg" style="max-width:100%;"></a>
+                <a href="https://codecov.io/github/syntax-tree/unist-util-visit-parents" rel="nofollow"><img src="https://camo.githubusercontent.com/351f387f13144c2adc5bd5c0a933cf9bae720544/68747470733a2f2f696d672e736869656c64732e696f2f636f6465636f762f632f6769746875622f73796e7461782d747265652f756e6973742d7574696c2d76697369742d706172656e74732e737667" alt="Coverage" data-canonical-src="https://img.shields.io/codecov/c/github/syntax-tree/unist-util-visit-parents.svg" style="max-width:100%;"></a>
+                <a href="https://www.npmjs.com/package/unist-util-visit-parents" rel="nofollow"><img src="https://camo.githubusercontent.com/60ba776b0e728ec5d2d2302ddece7cdee88d8058/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f756e6973742d7574696c2d76697369742d706172656e74732e737667" alt="Downloads" data-canonical-src="https://img.shields.io/npm/dm/unist-util-visit-parents.svg" style="max-width:100%;"></a>
+                <a href="https://bundlephobia.com/result?p=unist-util-visit-parents" rel="nofollow"><img src="https://camo.githubusercontent.com/b7851b432bca2542a6a90d9a11330f8e4649da12/68747470733a2f2f696d672e736869656c64732e696f2f62756e646c6570686f6269612f6d696e7a69702f756e6973742d7574696c2d76697369742d706172656e74732e737667" alt="Size" data-canonical-src="https://img.shields.io/bundlephobia/minzip/unist-util-visit-parents.svg" style="max-width:100%;"></a>
+                <a href="https://opencollective.com/unified" rel="nofollow"><img src="https://camo.githubusercontent.com/59cd248b065a28f0d36c003273950283465b2f6b/68747470733a2f2f6f70656e636f6c6c6563746976652e636f6d2f756e69666965642f73706f6e736f72732f62616467652e737667" alt="Sponsors" data-canonical-src="https://opencollective.com/unified/sponsors/badge.svg" style="max-width:100%;"></a>
+                <a href="https://opencollective.com/unified" rel="nofollow"><img src="https://camo.githubusercontent.com/e06f087f381a24b9e2c87a62c610ac27f9486a9a/68747470733a2f2f6f70656e636f6c6c6563746976652e636f6d2f756e69666965642f6261636b6572732f62616467652e737667" alt="Backers" data-canonical-src="https://opencollective.com/unified/backers/badge.svg" style="max-width:100%;"></a>
+                <a href="https://spectrum.chat/unified/syntax-tree" rel="nofollow"><img src="https://camo.githubusercontent.com/34242eb42e22e22b893302409d9075ea1c8887cc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636861742d737065637472756d2d3762313666662e737667" alt="Chat" data-canonical-src="https://img.shields.io/badge/chat-spectrum-7b16ff.svg" style="max-width:100%;"></a></p>
+            <p><a href="https://github.com/syntax-tree/unist"><strong>unist</strong></a> utility to visit nodes, with ancestral information.</p>
+            <h2><a id="user-content-install" class="anchor" aria-hidden="true" href="#install"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
+            <p><a href="https://docs.npmjs.com/cli/install" rel="nofollow">npm</a>:</p>
+            <div class="highlight highlight-source-shell"><pre>npm install unist-util-visit-parents</pre></div>
+            <h2><a id="user-content-use" class="anchor" aria-hidden="true" href="#use"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use</h2>
+            <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> remark <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>remark<span class="pl-pds">'</span></span>)
+                <span class="pl-k">var</span> visit <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>unist-util-visit-parents<span class="pl-pds">'</span></span>)
+
+                <span class="pl-k">var</span> tree <span class="pl-k">=</span> <span class="pl-smi">remark</span>.<span class="pl-c1">parse</span>(<span class="pl-s"><span class="pl-pds">'</span>Some _emphasis_, **importance**, and `code`.<span class="pl-pds">'</span></span>)
+
+                <span class="pl-en">visit</span>(tree, <span class="pl-s"><span class="pl-pds">'</span>strong<span class="pl-pds">'</span></span>, visitor)
+
+                <span class="pl-k">function</span> <span class="pl-en">visitor</span>(<span class="pl-smi">node</span>, <span class="pl-smi">ancestors</span>) {
+                <span class="pl-en">console</span>.<span class="pl-c1">log</span>(ancestors)
+}</pre></div>
+            <p>Yields:</p>
+            <div class="highlight highlight-source-js"><pre>[ { type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>root<span class="pl-pds">'</span></span>, children<span class="pl-k">:</span> [ [<span class="pl-c1">Object</span>] ] },
+  { type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>paragraph<span class="pl-pds">'</span></span>,
+    children<span class="pl-k">:</span>
+     [ [<span class="pl-c1">Object</span>],
+       [<span class="pl-c1">Object</span>],
+       [<span class="pl-c1">Object</span>],
+       [<span class="pl-c1">Object</span>],
+       [<span class="pl-c1">Object</span>],
+       [<span class="pl-c1">Object</span>],
+       [<span class="pl-c1">Object</span>] ] } ]</pre></div>
+            <h2><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h2>
+            <h3><a id="user-content-visittree-test-visitor-reverse" class="anchor" aria-hidden="true" href="#visittree-test-visitor-reverse"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>visit(tree[, test], visitor[, reverse])</code></h3>
+            <p>Visit nodes (<a href="https://github.com/syntax-tree/unist#descendant"><em>inclusive descendants</em></a> of <a href="https://github.com/syntax-tree/unist#tree"><code>tree</code></a>), with
+                ancestral information.
+                Optionally filtering nodes.
+                Optionally in reverse.</p>
+            <p>This algorithm performs <a href="https://github.com/syntax-tree/unist#depth-first-traversal"><em>depth-first</em></a>
+                <a href="https://github.com/syntax-tree/unist#tree-traversal"><em>tree traversal</em></a> in <a href="https://github.com/syntax-tree/unist#preorder"><em>preorder</em></a> (<strong>NLR</strong>), or
+                if <code>reverse</code> is given, in <em>reverse preorder</em> (<strong>NRL</strong>).</p>
+            <p>Walking the tree is an intensive task.
+                Make use of the return values of the visitor when possible.
+                Instead of walking a tree multiple times with different <code>test</code>s, walk it once
+                without a test, and use <a href="https://github.com/syntax-tree/unist-util-is"><code>unist-util-is</code></a> to check if a node matches a test,
+                and then perform different operations.</p>
+            <h6><a id="user-content-parameters" class="anchor" aria-hidden="true" href="#parameters"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h6>
+            <ul>
+                <li><code>tree</code> (<a href="https://github.com/syntax-tree/unist#node"><code>Node</code></a>) — <a href="https://github.com/syntax-tree/unist#tree">Tree</a> to traverse</li>
+                <li><code>test</code> (<a href="https://github.com/syntax-tree/unist-util-is"><code>Test</code></a>, optional) — <a href="https://github.com/syntax-tree/unist-util-is"><code>is</code></a>-compatible test (such as a
+                    <a href="https://github.com/syntax-tree/unist#type">type</a>)</li>
+                <li><code>visitor</code> (<a href="#next--visitornode-ancestors">Function</a>) — Function invoked when a node is found
+                    that passes <code>test</code></li>
+                <li><code>reverse</code> (<code>boolean</code>, default: <code>false</code>) — The tree is traversed in
+                    <a href="https://github.com/syntax-tree/unist#preorder">preorder</a> (NLR), visiting the node itself, then its <a href="https://github.com/syntax-tree/unist#head">head</a>, etc.
+                    When <code>reverse</code> is passed, the tree is traversed in reverse preorder (NRL):
+                    the node itself is visited, then its <a href="https://github.com/syntax-tree/unist#tail">tail</a>, etc.</li>
+            </ul>
+            <h4><a id="user-content-next--visitornode-ancestors" class="anchor" aria-hidden="true" href="#next--visitornode-ancestors"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>next? = visitor(node, ancestors)</code></h4>
+            <p>Invoked when a node (matching <code>test</code>, if given) is found.</p>
+            <p>Visitors are free to transform <code>node</code>.
+                They can also transform the <a href="https://github.com/syntax-tree/unist#parent-1">parent</a> of node (the last of <code>ancestors</code>).
+                Replacing <code>node</code> itself, if <code>visit.SKIP</code> is not returned, still causes its
+                <a href="https://github.com/syntax-tree/unist#descendant">descendant</a>s to be visited.
+                If adding or removing previous <a href="https://github.com/syntax-tree/unist#sibling">sibling</a>s (or next siblings, in case of
+                <code>reverse</code>) of <code>node</code>, <code>visitor</code> should return a new <a href="https://github.com/syntax-tree/unist#index"><code>index</code></a> (<code>number</code>)
+                to specify the sibling to traverse after <code>node</code> is traversed.
+                Adding or removing next siblings of <code>node</code> (or previous siblings, in case of
+                reverse) is handled as expected without needing to return a new <code>index</code>.
+                Removing the <code>children</code> property of an ancestor still results in them being
+                traversed.</p>
+            <h6><a id="user-content-parameters-1" class="anchor" aria-hidden="true" href="#parameters-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h6>
+            <ul>
+                <li><code>node</code> (<a href="https://github.com/syntax-tree/unist#node"><code>Node</code></a>) — Found node</li>
+                <li><code>ancestors</code> (<code>Array.&lt;Node&gt;</code>) — <a href="https://github.com/syntax-tree/unist#ancestor">Ancestor</a>s of <code>node</code></li>
+            </ul>
+            <h5><a id="user-content-returns" class="anchor" aria-hidden="true" href="#returns"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Returns</h5>
+            <p>The return value can have the following forms:</p>
+            <ul>
+                <li><a href="https://github.com/syntax-tree/unist#index"><code>index</code></a> (<code>number</code>) — Treated as a tuple of <code>[CONTINUE, index]</code></li>
+                <li><code>action</code> (<code>*</code>) — Treated as a tuple of <code>[action]</code></li>
+                <li><code>tuple</code> (<code>Array.&lt;*&gt;</code>) — List with one or two values, the first an <code>action</code>,
+                    the second and <code>index</code>.
+                    Note that passing a tuple only makes sense if the <code>action</code> is <code>SKIP</code>.
+                    If the <code>action</code> is <code>EXIT</code>, that action can be returned.
+                    If the <code>action</code> is <code>CONTINUE</code>, <code>index</code> can be returned.</li>
+            </ul>
+            <h6><a id="user-content-action" class="anchor" aria-hidden="true" href="#action"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>action</code></h6>
+            <p>An action can have the following values:</p>
+            <ul>
+                <li><code>visit.EXIT</code> (<code>false</code>) — Stop traversing immediately</li>
+                <li><code>visit.CONTINUE</code> (<code>true</code>) — Continue traversing as normal (same behaviour
+                    as not returning anything)</li>
+                <li><code>visit.SKIP</code> (<code>'skip'</code>) — Do not traverse this node’s children; continue
+                    with the specified index</li>
+            </ul>
+            <h6><a id="user-content-index" class="anchor" aria-hidden="true" href="#index"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>index</code></h6>
+            <p><a href="https://github.com/syntax-tree/unist#index"><code>index</code></a> (<code>number</code>) — Move to the sibling at <code>index</code> next (after <code>node</code>
+                itself is completely traversed).
+                Useful if mutating the tree, such as removing the node the visitor is currently
+                on, or any of its previous siblings (or next siblings, in case of <code>reverse</code>) 
+                Results less than <code>0</code> or greater than or equal to <code>children.length</code> stop
+                traversing the parent</p>
+            <h2><a id="user-content-related" class="anchor" aria-hidden="true" href="#related"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Related</h2>
+            <ul>
+                <li><a href="https://github.com/syntax-tree/unist-util-visit"><code>unist-util-visit</code></a>
+                    — Like <code>visit-parents</code>, but with one parent</li>
+                <li><a href="https://github.com/eush77/unist-util-filter"><code>unist-util-filter</code></a>
+                    — Create a new tree with all nodes that pass a test</li>
+                <li><a href="https://github.com/syntax-tree/unist-util-map"><code>unist-util-map</code></a>
+                    — Create a new tree with all nodes mapped by a given function</li>
+                <li><a href="https://gitlab.com/staltz/unist-util-flatmap" rel="nofollow"><code>unist-util-flatmap</code></a>
+                    — Create a new tree by mapping (to an array) with the provided function and
+                    then flattening</li>
+                <li><a href="https://github.com/eush77/unist-util-remove"><code>unist-util-remove</code></a>
+                    — Remove nodes from a tree that pass a test</li>
+                <li><a href="https://github.com/eush77/unist-util-select"><code>unist-util-select</code></a>
+                    — Select nodes with CSS-like selectors</li>
+            </ul>
+            <h2><a id="user-content-contribute" class="anchor" aria-hidden="true" href="#contribute"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contribute</h2>
+            <p>See <a href="https://github.com/syntax-tree/.github/blob/master/contributing.md"><code>contributing.md</code> in <code>syntax-tree/.github</code></a> for ways to get
+                started.
+                See <a href="https://github.com/syntax-tree/.github/blob/master/support.md"><code>support.md</code></a> for ways to get help.</p>
+            <p>This project has a <a href="https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md">code of conduct</a>.
+                By interacting with this repository, organization, or community you agree to
+                abide by its terms.</p>
+            <h2><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
+            <p style="will-change:transform;-webkit-whatever:true;test:10;begin:wow;end:eow;"><a href="/syntax-tree/unist-util-visit-parents/blob/master/license">MIT</a> © <a href="https://wooorm.com" rel="nofollow" type="yup" begin="whoops">Titus Wormer <begin>Should fail</begin><end>And this too</end></a></p>
+
+        </article>
+    </div>
+</div>

@@ -7,27 +7,31 @@ var Copy_textJs = require("../copy_text.js");
 var Templates$LoginForm = require("../Templates.bs.js");
 var HtmlConverter$LoginForm = require("../HtmlConverter.bs.js");
 
+var defaultText = "<div style=\"font-weight: bolder\">Hello there! Go on &amp; convert your html!</div>";
+
+var initialState_jsx = HtmlConverter$LoginForm.convert("__DEFAULT__", defaultText);
+
 var initialState = {
-  html: "",
-  jsx: ""
+  html: defaultText,
+  jsx: initialState_jsx
 };
 
 function reducer(_state, action) {
   var str = action[0];
   return {
           html: str,
-          jsx: HtmlConverter$LoginForm.go(str)
+          jsx: HtmlConverter$LoginForm.convert("_INLINE_", str)
         };
 }
 
 function copy_text(prim) {
   Copy_textJs(prim);
-  return /* () */0;
+  
 }
 
 function copyOutput(param) {
   Copy_textJs("copyMe");
-  return /* () */0;
+  
 }
 
 function Index$default(Props) {
@@ -65,7 +69,7 @@ function Index$default(Props) {
                             }, "Copy Reason"), React.createElement("button", {
                               onClick: (function (param) {
                                   Copy_textJs("copyMe");
-                                  return /* () */0;
+                                  
                                 })
                             }, Templates$LoginForm.clipboard)), React.createElement("div", {
                           className: "p-1 h-full"
@@ -79,6 +83,7 @@ function Index$default(Props) {
 
 var $$default = Index$default;
 
+exports.defaultText = defaultText;
 exports.initialState = initialState;
 exports.reducer = reducer;
 exports.copy_text = copy_text;
@@ -86,4 +91,4 @@ exports.copyOutput = copyOutput;
 exports.$$default = $$default;
 exports.default = $$default;
 exports.__esModule = true;
-/* react Not a pure module */
+/* initialState Not a pure module */
