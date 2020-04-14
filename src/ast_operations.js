@@ -76,7 +76,7 @@ const convertAttributeName = (node) => {
         base === "class"
           ? "className"
           : base === "for"
-          ? "forHtml"
+          ? "htmlFor"
           : reasonHelpers.isReservedKeyword(base)
           ? reasonHelpers.mangleNameAsAttribute(base)
           : base;
