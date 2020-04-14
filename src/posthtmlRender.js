@@ -946,7 +946,7 @@ const REASON_REACT_DOM_ATTRIBUTE_CANONICAL_NAMES = {
   ZOOMANDPAN: "zoomAndPan",
 };
 
-export const getAttributeCanonicalName = (name) => {
+const getAttributeCanonicalName = (name) => {
   return REASON_REACT_DOM_ATTRIBUTE_CANONICAL_NAMES[name.toUpperCase()] || name;
 };
 
@@ -958,13 +958,39 @@ const escapeQuotes = (string) => {
   return string;
 };
 
+const DASH = /[-|_|:]([a-z])/g;
+const MS = /^Ms/g;
+
+function capitalize(match) {
+  return match[1].toUpperCase();
+}
+
+function lowerCaseFirst(s) {
+  return s.charAt(0).toLowerCase() + s.slice(1);
+}
+
+function camelCase(property) {
+  const mid = property.replace(DASH, capitalize).replace(MS, "ms");
+  const final = lowerCaseFirst(mid);
+
+  return final;
+}
+
 const attributeCoercions = {
   string: (name, string) => `${name}="${escapeQuotes(string)}"`,
-  bool: (name, value) =>
-    `${name}=${value || value.toUpperCase() === "TRUE" || value === ""}`,
+  bool: (name, value) => {
+    console.log(name, value);
+    let coerced = value;
+    if (typeof value == "string") {
+      coerced = camelCase(coerced);
+      console.log(name, coerced, value, typeof coerced);
+      coerced = value.toUpperCase() === "TRUE" || value === "";
+    }
+    return `${name}=${coerced}`;
+  },
   int: (name, value) => {
     try {
-      return `${name}=${parseInt(value, 10)}`;
+      return `${name}=(${parseInt(value, 10)})`;
     } catch (e) {
       console.warn(
         `Failed to parse int for attribute ${name}, failure: ${e}. Returning original value.`
@@ -974,7 +1000,7 @@ const attributeCoercions = {
   },
   float: (name, value) => {
     try {
-      return `${name}=${parseFloat(value, 10)}`;
+      return `${name}=(${parseFloat(value, 10)})`;
     } catch (e) {
       console.warn(
         `Failed to parse float for attribute ${name}, failure: ${e}. Returning original value version.`
@@ -984,8 +1010,21 @@ const attributeCoercions = {
   },
   function: (name, value) => {
     // If the html has e.g. an onClick handler set in the html, we expect it to
-    // be a variable name, so leave it unquoted
-    return `${name}=${value}`;
+    // be a variable name, so leave it unquoted. If it's blank, then assign it the
+    // same name as the attribute
+    //
+    // ... *unless* it contains spaces, in which case it might be inline-JS (hacker news...)
+    // so quote it, and don't camelCase the value
+
+    let coerced;
+
+    if ((value || "").trim().includes(" ")) {
+      coerced = `"${escapeQuotes(value)}"`;
+    } else {
+      coerced = camelCase(value) || camelCase(name);
+    }
+
+    return `${name}=${coerced}`;
   },
   "ReactDOMRe.style": (name, value) => {
     return `${name}={${value}}`;
@@ -1121,7 +1160,7 @@ function render(tree, options) {
    *
    * @return {String} result HTML
    */
-  function htmlHelper(tree) {
+  function htmlHelper(level, tree) {
     var result = "";
 
     if (!Array.isArray(tree)) {
@@ -1140,9 +1179,12 @@ function render(tree, options) {
         return;
       }
 
+      // Rudimentary indentation before refmt can help
+      const whitespace = new Array(level).fill("  ").join("");
+
       // treat as new root tree if node is an array
       if (Array.isArray(node)) {
-        result += html(node);
+        result += htmlHelper(level + 1, node);
 
         return;
       }
@@ -1155,7 +1197,7 @@ function render(tree, options) {
 
       // skip node
       if (node.tag === false) {
-        result += html(node.content);
+        result += htmlHelper(level + 1, node.content);
 
         return;
       }
@@ -1171,20 +1213,26 @@ function render(tree, options) {
       if (isSingleTag(tag)) {
         switch (closingSingleTag) {
           case "tag":
-            result += "> </" + tag + ">";
+            result += "> </" + tag + ">\n" + whitespace;
 
             break;
           case "slash":
-            result += " />";
+            result += " />\n" + whitespace;
 
             break;
           default:
-            result += ">";
+            result += ">\n" + whitespace;
         }
 
-        result += html(node.content);
+        result += htmlHelper(level + 1, node.content);
       } else {
-        result += "> " + html(node.content) + " </" + tag + ">";
+        result +=
+          "> " +
+          htmlHelper(level + 1, node.content) +
+          " </" +
+          tag +
+          ">\n" +
+          whitespace;
       }
     });
 
@@ -1196,7 +1244,7 @@ function render(tree, options) {
       tree = makeWrapperNode(tree);
     }
 
-    return htmlHelper(tree);
+    return htmlHelper(0, tree);
   }
 }
 
@@ -1208,3 +1256,7 @@ function render(tree, options) {
  */
 module.exports = render;
 module.exports.getAttributeCanonicalName = getAttributeCanonicalName;
+module.exports.capitalize = capitalize;
+module.exports.lowerCaseFirst = lowerCaseFirst;
+module.exports.camelCase = camelCase;
+module.exports.escapeQuotes = escapeQuotes;

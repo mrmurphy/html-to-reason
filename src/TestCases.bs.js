@@ -6,50 +6,9 @@ var Belt_Array = require("bs-platform/lib/js/belt_Array.js");
 var Ast_operationsJs = require("./ast_operations.js");
 var HtmlConverter$LoginForm = require("./HtmlConverter.bs.js");
 
-var htmlTestCases = [
-  "test1.html",
-  "test2.html",
-  "test3.html",
-  "test4.html",
-  "test5.html",
-  "test6.html",
-  "./full_test.html"
-];
+var htmlTestCases = [];
 
-var svgTestCases = [
-  "ghostscript_tiger.svg",
-  "test2.svg",
-  "test4.svg",
-  "test5.svg",
-  "test6.svg",
-  "test7.svg",
-  "test8.svg",
-  "test9.svg",
-  "test10.svg",
-  "test11.svg",
-  "test12.svg",
-  "test13.svg",
-  "test14.svg",
-  "test15.svg",
-  "test16.svg",
-  "test17.svg",
-  "test18.svg",
-  "test19.svg",
-  "test20.svg",
-  "test21.svg",
-  "test22.svg",
-  "test23.svg",
-  "test24.svg",
-  "test25.svg",
-  "test26.svg",
-  "test27.svg",
-  "test28.svg",
-  "test29.svg",
-  "test30.svg",
-  "test31.svg",
-  "test32.svg",
-  "testSpinner.svg"
-];
+var svgTestCases = [];
 
 var testCaseFiles = Belt_Array.concat(htmlTestCases, svgTestCases);
 
@@ -68,7 +27,7 @@ function test(param) {
           var name = testCase[0];
           var filename = "/tmp/" + (String(name) + ".re");
           console.log("Appending test case: ", filename);
-          testShellContent.contents = testShellContent.contents + ("\n" + ("head " + (String(filename) + ("; /Users/s/.esy/3_______________________________________________________________________/i/opam__s__reason-7d161d4c/bin/refmt --in-place " + (String(filename) + ";\n")))));
+          testShellContent.contents = testShellContent.contents + ("\n" + ("head " + (String(filename) + ("; /Users/s/.esy/3_______________________________________________________________________/i/opam__s__reason-7d161d4c/bin/refmt --in-place " + (String(filename) + ";\n             ")))));
           var result = HtmlConverter$LoginForm.convert(name, testCase[1]);
           Fs.writeFileSync(filename, "/* Original:\n\n*/\n\nlet result = (<> " + (String(result) + " </>)\n\n"));
           
