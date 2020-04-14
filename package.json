@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "bsb -clean-world && bsb -make-world && next build",
+    "build-static": "bsb -clean-world && bsb -make-world && next build && next export",
     "reason": "bsb -clean-world && bsb -make-world -w",
     "start": "next start",
     "dev": "next"
