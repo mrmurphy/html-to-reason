@@ -2,7 +2,7 @@
   "name": "login-form",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -clean-world && bsb -make-world -w && next build",
+    "build": "bsb -clean-world && bsb -make-world && next build",
     "reason": "bsb -clean-world && bsb -make-world -w",
     "start": "next start",
     "dev": "next"
