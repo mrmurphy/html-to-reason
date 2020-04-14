@@ -5,26 +5,9 @@ const reasonHelpers = require("./ReasonHelpers.bs.js");
 
 const entities = new Entities();
 
-const DASH = /[-|_|:]([a-z])/g;
-const MS = /^Ms/g;
-
-function capitalize(match) {
-  return match[1].toUpperCase();
-}
-
-function lowerCaseFirst(s) {
-  return s.charAt(0).toLowerCase() + s.slice(1);
-}
-
-function camelCase(property) {
-  const mid = property.replace(DASH, capitalize).replace(MS, "ms");
-  const final = lowerCaseFirst(mid);
-
-  return final;
-}
-
 function replaceStyle(styleString) {
-  const styles = styleString
+  const styles = entities
+    .decode(styleString)
     .trim()
     .split(";")
     .map((style) => {
@@ -32,12 +15,27 @@ function replaceStyle(styleString) {
         return "";
       }
 
-      const [property, value] = style.split(":");
-      let basePropertyName = camelCase(property);
+      // Extract any urls that might have `:` in them first, decode them, then
+      // replace them later;
+
+      const urls = {};
+      var urlCounter = 0;
+
+      const safeStyle = style
+        .split(/\n/)
+        .map((piece) => piece.trim())
+        .join("");
+      const [property, value] = safeStyle.split(/:(?!\/\/)/g);
+      let basePropertyName = posthtmlRender.camelCase(property);
       const safePropertyName = reasonHelpers.isReservedKeyword(basePropertyName)
         ? reasonHelpers.mangleNameAsAttribute(basePropertyName)
         : basePropertyName;
-      return "~" + safePropertyName + '="' + value + '"';
+
+      let basePropertyValue = (value || "").replace(/\n/g, "").trim();
+
+      const safePropertyValue = posthtmlRender.escapeQuotes(basePropertyValue);
+
+      return "~" + safePropertyName + '="' + safePropertyValue + '"';
     })
     .filter(Boolean);
 
@@ -47,13 +45,11 @@ function replaceStyle(styleString) {
 }
 
 const convertTag = (node) => {
-  if (
-    node.tag &&
-    reasonHelpers.isReservedKeyword(node.tag.toLocaleLowerCase())
-  ) {
-    const tag = reasonHelpers.mangleNameAsAttribute(node.tag);
+  if (node.tag) {
+    const tag = posthtmlRender.camelCase(node.tag);
 
     return { ...node, tag: tag };
+    o;
   }
   return node;
 };
@@ -72,15 +68,20 @@ const convertStyle = (node) => {
 const convertAttributeName = (node) => {
   if (Object.keys(node.attrs || {}).length > 0) {
     const entries = Object.entries(node.attrs || {}).map(([key, value]) => {
-      const base = posthtmlRender.getAttributeCanonicalName(camelCase(key));
+      const base = posthtmlRender.getAttributeCanonicalName(
+        posthtmlRender.camelCase(key)
+      );
+
       const newKey =
         base === "class"
           ? "className"
+          : base === "for"
+          ? "forHtml"
           : reasonHelpers.isReservedKeyword(base)
           ? reasonHelpers.mangleNameAsAttribute(base)
           : base;
 
-      return [newKey, value];
+      return [newKey, value.trim()];
     });
 
     const attrs = Object.fromEntries(entries);
@@ -114,7 +115,13 @@ const isCommentNode = (node) => {
 };
 
 const extractCommentFromCommentNode = (node) => {
-  return node.match(/<!--(.*)-->/)[1].trim();
+  const temp = node.match(/<!--(.*)-->/)[1].trim();
+  const quoteCount = temp.match(/"/g);
+
+  // Refmt will bizarrely throw a syntax error if a comment contains an unterminated string literal
+  const safe = (quoteCount || []).length % 2 === 0 ? temp : temp + '"';
+
+  return safe;
 };
 
 const posthtmlReason = (tree) => {
@@ -128,6 +135,7 @@ const posthtmlReason = (tree) => {
       }
     } else {
       let node = { ...originalNode };
+      node = convertTag(node);
       node = convertAttributeName(node);
       node = convertStyle(node);
 
